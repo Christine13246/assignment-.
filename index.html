@@ -1,6 +1,8 @@
 <doctype!>
-  <html>
+  <html lang="en">
     <head>
+      <body>
+      <meta charset="UTF-8">
     <title>christine.com</title>
       <style>
     body{
@@ -16,7 +18,7 @@
       margin-bottom: 30px;
     }
     .email-btn{
-      display:block;
+      display:inline-block;
       width:fit-content;
       margin: 30px auto 0 auto;
       background-color: navy;
@@ -39,4 +41,24 @@
        This page introduces me in a friendly way. I write books and songs, and I love designing on Figma. This is my INS202 assignment</div>
        <br>
        <a href="mailto:2024ns0133@unijos.edu.ng"
-       class="email-btn"> Send Email</a>
+       class="email-btn" id="send-btn"> Send Email</a>
+       <script>
+         const matric= "UJ/2024/NS/0133"
+         function hashString(str){
+           let hash = 0;
+           for (let i = 0<str.length;i++){
+             hash = (hash * 31 + str.charCodeAt(i)) >>> 0;
+         }
+         return hash;
+         }
+         // Normalise input
+         const normalised = matric.trim().toUpperCase();
+
+        // Map the hash to a hue value between 0 and 359 degrees
+        const hue = hashString(normalised) % 360;
+        // Build an HSL colour: fixed saturation & lightness, varying hue
+        const buttonColour = `hsl(${hue}, 65%, 45%)`;
+        // Apply the colour to the Send Email button
+        document.getElementById("send-btn").style.background = buttonColour;
+       </script>
+       </body>
