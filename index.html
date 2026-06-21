@@ -19,6 +19,7 @@
     }
     .email-btn{
       display:inline-block;
+      padding: 12px 30px;
       width:fit-content;
       margin: 30px auto 0 auto;
       background-color: navy;
@@ -26,6 +27,8 @@
       text-decoration: none;
       font-family: Arial, Sans-Serif ;
       font-weight: bold;
+      text-align: center;
+      min-width: 120px;
       padding: 12px 30px;
       border-radius: 25px ;
     }
@@ -40,8 +43,8 @@
         <div class="fancy-box"><h3>About</h3>
        This page introduces me in a friendly way. I write books and songs, and I love designing on Figma. This is my INS202 assignment</div>
        <br>
-       <a href="mailto:2024ns0133@unijos.edu.ng"
-       class="email-btn" id="send-btn"> Send Email</a>
+       <div style="text-align:center, margin-top: 20px;"><a href="mailto:2024ns0133@unijos.edu.ng"
+       class="email-btn" id="send-btn"> Send Email</a></div>
        <script>
          const matric= "UJ/2024/NS/0133"
          function hashString(str){
