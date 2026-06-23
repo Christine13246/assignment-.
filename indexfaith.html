@@ -1,0 +1,66 @@
+<doctype!>
+  <html lang="en">
+    <head>
+      <body>
+      <meta charset="UTF-8">
+    <title>faithspage.com</title>
+      <style>
+    body{
+      background: darkred;
+    }
+    .fancy-box{
+      background-color: darkgrey;
+      border-radius: 12px;
+      padding:20px;
+      width:fit-content;
+      box-shadow: 0 6px 20px;
+      font-family: Times New Roman;
+      line-height: 1.5;
+      margin-bottom: 30px;
+    }
+    .email-btn{
+      display:inline-block;
+      padding: 12px 30px;
+      width:fit-content;
+      margin: 30px auto 0 auto;
+      background-color: black;
+      color: white;
+      font-family: Times New Roman;
+      font-weight: bold;
+      text-align: center;
+      min-width: 120px;
+      border-radius: 25px ;
+    }
+    </style>
+    <br>
+      <h1><center><font color= "white"><bold>My New Static Web Application </center></font><bold></h1>
+      <p>
+        <p>
+          <div class="fancy-box"><h3>Introduction</h3> My name is Faith David Amantantani.I am in 200 level and a student in the department of Computer Science. My matriculation number is UJ/2024/NS/0758.</div>
+      <p>
+        <p>
+        <div class="fancy-box"><h3>About</h3>
+       I enjoy talking with friends and learning new things. Mainly, this is my INS202 assigment.</div>
+       <br>
+       <div style="text-align:center, margin-top: 20px;"><a href="mailto:2024ns0758@unijos.edu.ng"
+       class="email-btn" id="send-btn"> Send Email</a></div>
+       <script>
+         const matric= "UJ/2024/NS/0758"
+         function hashString(str){
+           let hash = 0;
+           for (let i = 0<str.length;i++){
+             hash = (hash * 31 + str.charCodeAt(i)) >>> 0;
+         }
+         return hash;
+         }
+         // Normalise input
+         const normalised = matric.trim().toUpperCase();
+
+        // Map the hash to a hue value between 0 and 359 degrees
+        const hue = hashString(normalised) % 360;
+        // Build an HSL colour: fixed saturation & lightness, varying hue
+        const buttonColour = `hsl(${hue}, 65%, 45%)`;
+        // Apply the colour to the Send Email button
+        document.getElementById("send-btn").style.background = buttonColour;
+       </script>
+       </body>
